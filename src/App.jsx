@@ -1,19 +1,27 @@
 import React from "react";
 import "./App.scss";
-import getHost from "./utils/getHost";
+import {
+  useParams,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
 
 function App() {
-  const HOST = getHost();
-  const getData = () => {
-    fetch(`${HOST}/listUsers`).then((res) => res.json()).then((res) => {
-      console.log(res);
-    });
-  };
+  let navigate = useNavigate();
+
+
   return (
     <div className="App">
       <header className="App-header">
         Hello dheeru
-        {getData()}
+        <button
+          onClick={() => {
+           
+            navigate("/login" );
+          }}
+        >
+          login
+        </button>
       </header>
     </div>
   );
