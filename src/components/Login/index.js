@@ -1,7 +1,14 @@
 import React from "react";
+import { isCorrectMail } from "../../utils/fieldsValidation.js"
+import {
+    useParams,
+    useNavigate,
+    useLocation,
+  } from "react-router-dom";
 
 const Login = () => {
 const isLoggedIn = false;
+let navigate = useNavigate();
     return (
         <>
             <h4>Login</h4>
@@ -12,10 +19,11 @@ const isLoggedIn = false;
                 </div>
                 <div className="login-form-password">
                     <label>Username:</label>
-                    <input type="text" />
+                    {isCorrectMail("kkjjlk@hg.com")? "true" : "false"}
+                    <input type="text"  />
                 </div>
                 <div className="login-form-action">
-                   <button>Reset</button>
+                   <button onClick={()=>navigate("/")}>Cancel</button>
                    <button>Login</button>
                 </div>
             </form>

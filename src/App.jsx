@@ -1,9 +1,8 @@
 import React from "react";
 import "./App.scss";
 import {
-  useParams,
+  Link,
   useNavigate,
-  useLocation,
 } from "react-router-dom";
 
 function App() {
@@ -22,6 +21,7 @@ function App() {
         >
           login
         </button>
+        <Link to="/dashboard">Dashboard</Link>
       </header>
     </div>
   );
